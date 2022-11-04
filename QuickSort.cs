@@ -7,11 +7,9 @@ namespace algorithms
 {
     internal class QuickSort
     {
-        static void Swap(int[] arr, int i, int j)
+        static void Swap(IList<int> arr, int i, int j)
         {
-            int temp = arr[i];
-            arr[i] = arr[j];
-            arr[j] = temp;
+            (arr[i], arr[j]) = (arr[j], arr[i]);
         }
 
         static int Part(int[] arr, int low, int high)
@@ -22,11 +20,12 @@ namespace algorithms
 
             for (int j = low; j <= high - 1; j++)
             {
-                if (arr[j] < pivot)
+                if (arr[j] >= pivot)
                 {
-                    i++;
-                    Swap(arr, i, j);
+                    continue;
                 }
+                i++;
+                Swap(arr, i, j);
             }
             Swap(arr, i + 1, high);
             return (i + 1);
@@ -34,13 +33,14 @@ namespace algorithms
 
         public static void Sort(int[] arr, int low, int high)
         {
-            if (low < high)
+            if (low >= high)
             {
-                int pi = Part(arr, low, high);
-
-                Sort(arr, low, pi - 1);
-                Sort(arr, pi + 1, high);
+                return;
             }
+            int pi = Part(arr, low, high);
+
+            Sort(arr, low, pi - 1);
+            Sort(arr, pi + 1, high);
         }
     }
 }

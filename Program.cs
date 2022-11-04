@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 
 namespace algorithms
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             var watch = new System.Diagnostics.Stopwatch();
 
@@ -16,7 +17,7 @@ namespace algorithms
             List<int> biggerList = MakeList(10000);
             List<int> longAssList = MakeList(100000);
 
-            List<List<int>> listlist = new List<List<int>>() { smallList, normalList, bigList, biggerList, longAssList };
+            List<List<int>> listlist = new List<List<int>>() { smallList, normalList, bigList, biggerList };
 
             Console.WriteLine("Testing Bubble Sort:");
 
@@ -31,9 +32,8 @@ namespace algorithms
 
             Console.WriteLine("Testing Quick Sort:");
 
-            foreach (List<int> list in listlist)
+            foreach (var arr in listlist.Select(list => list.ToArray()))
             {
-                int[] arr = list.ToArray();
                 watch.Start();
                 QuickSort.Sort(arr, 0, arr.Length - 1);
                 watch.Stop();
@@ -107,14 +107,6 @@ namespace algorithms
             }
 
             return list;
-        }
-
-        static void printArray(List<int> arr)
-        {
-            int n = arr.Count;
-            for (int i = 0; i < n; ++i)
-                Console.Write(arr[i] + " ");
-            Console.WriteLine();
         }
     }
 }
