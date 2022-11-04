@@ -10,14 +10,14 @@ namespace algorithms
         static void Main()
         {
             var watch = new System.Diagnostics.Stopwatch();
-
+            
             List<int> smallList = MakeList(10);
             List<int> normalList = MakeList(100);
             List<int> bigList = MakeList(1000);
-            List<int> biggerList = MakeList(10000);
-            List<int> longAssList = MakeList(100000);
+            List<int> giantList = MakeList(10000);
+            List<int> longAssList = MakeList(100000); // long ass list causes stack overflows :(
 
-            List<List<int>> listlist = new List<List<int>>() { smallList, normalList, bigList, biggerList, longAssList };
+            List<List<int>> listlist = new List<List<int>>() { smallList, normalList, bigList, giantList };
 
             Console.WriteLine("Testing Bubble Sort:");
 
@@ -90,7 +90,7 @@ namespace algorithms
             }
         }
 
-        public static List<int> MakeList(int len)
+        static List<int> MakeList(int len)
         {
             List<int> list = new List<int>();
 
