@@ -1,0 +1,41 @@
+Small List - 10 elements
+Normal List - 100 elements
+Big List - 1000 elements
+Bigger List - 10000 elements
+(long ass list caused stack overflows, i dunno why)
+
+Testing Bubble Sort:
+Execution Time: 00:00:00.0002064
+Execution Time: 00:00:00.0000405
+Execution Time: 00:00:00.0037618
+Execution Time: 00:00:00.4305521
+
+Testing Quick Sort:
+Execution Time: 00:00:00.0004186
+Execution Time: 00:00:00.0001289
+Execution Time: 00:00:00.0126034
+Execution Time: 00:00:00.9586106
+
+Testing Selection Sort:
+Execution Time: 00:00:00.0001602
+Execution Time: 00:00:00.0000206
+Execution Time: 00:00:00.0017791
+Execution Time: 00:00:00.1885367
+
+Testing Merge Sort:
+Execution Time: 00:00:00.0003922
+Execution Time: 00:00:00.0000147
+Execution Time: 00:00:00.0001800
+Execution Time: 00:00:00.0016261
+
+Testing Binary Search:
+Execution Time: 00:00:00.0113429
+Execution Time: 00:00:00.0000028
+Execution Time: 00:00:00.0000009
+Execution Time: 00:00:00.0000007
+
+Testing Linear Search:
+Execution Time: 00:00:00.0000998
+Execution Time: 00:00:00.0000026
+Execution Time: 00:00:00.0000019
+Execution Time: 00:00:00.0000159
