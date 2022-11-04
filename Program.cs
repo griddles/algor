@@ -17,7 +17,6 @@ namespace algorithms
             List<int> longAssList = MakeList(100000);
 
             List<List<int>> listlist = new List<List<int>>() { smallList, normalList, bigList, biggerList, longAssList };
-            List<Action> funclist = new List<Action>();
 
             Console.WriteLine("Testing Bubble Sort:");
 
@@ -34,8 +33,9 @@ namespace algorithms
 
             foreach (List<int> list in listlist)
             {
+                int[] arr = list.ToArray();
                 watch.Start();
-                QuickSort.Sort(list, 0, list.Count - 1);
+                QuickSort.Sort(arr, 0, arr.Length - 1);
                 watch.Stop();
                 Console.WriteLine($"Execution Time: {watch.Elapsed}");
                 watch.Reset();
