@@ -17,7 +17,7 @@ namespace algorithms
             List<int> biggerList = MakeList(10000);
             List<int> longAssList = MakeList(100000);
 
-            List<List<int>> listlist = new List<List<int>>() { smallList, normalList, bigList, biggerList };
+            List<List<int>> listlist = new List<List<int>>() { smallList, normalList, bigList, biggerList, longAssList };
 
             Console.WriteLine("Testing Bubble Sort:");
 
